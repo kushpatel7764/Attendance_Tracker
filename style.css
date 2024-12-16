@@ -4,7 +4,14 @@
 }
 
 .Box{
-    background-color: whitesmoke;
+    background-color: rgb(236, 234, 234);
     margin:auto;
-    
+
+    border-radius: 3%;
+
+    border: none;
+
+
+    width: 600px;
+    height: 150px;
 }
