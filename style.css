@@ -1,0 +1,58 @@
+.title{
+    text-align: center;
+    font-size: 350%;
+}
+
+.Box{
+    background-color: rgb(236, 234, 234);
+    margin:auto;
+
+    text-align: center;
+
+    border-radius: 7px;
+
+    width: 600px;
+    height: 250;
+
+    box-shadow: 5px 5px 10px 5px rgb(216, 216, 216);
+}
+
+.h2{
+    text-align:center;
+
+    padding-top: 20px;
+}
+
+.Computer{
+    color:#fff;
+    background-color: #0d6efd;
+    padding: 5px 50px 5px 50px;
+    border:none;
+    border-radius: 10px;
+
+    font-size: 200%;
+}
+
+.Paper{
+    color:#fff;
+    background-color: #0d6efd;
+
+    margin-top: 20px;
+
+    padding: 5px 80px 5px 80px;
+    border:none;
+    border-radius: 10px;
+
+    font-size: 200%;
+}
+
+.Paper:hover{
+    background-color: #0650be;
+    transition: 0.5s;
+}
+
+.Computer:hover{
+    background-color: #0650be;
+    transition: 0.5s;
+}
+
