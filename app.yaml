@@ -1,0 +1,27 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+runtime: python312
+entrypoint: gunicorn -b :$PORT main:app
+app_engine_apis: true
+# Note: Saving credentials in environment variables is convenient, but not
+# secure - consider a more secure solution such as
+# Cloud Secret Manager (https://cloud.google.com/secret-manager) to help
+# keep secrets safe.
+env_variables:
+  CLOUD_SQL_USERNAME: kush
+  CLOUD_SQL_PASSWORD: 1234
+  CLOUD_SQL_DATABASE_NAME: attendance_sql
+  CLOUD_SQL_CONNECTION_NAME: semiotic-lamp-431814-j7:northamerica-northeast1:flasksql

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "semiotic-lamp-431814-j7",
+  "private_key_id": "c9786b187abefaf30fc9b18c9ccfdef38f7c0128",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC3NofbCQjGFp1Z\nmIA8K5f1wuB8aT2K01ynqiPnVKr/ocwqKwnKFlqgAn/gLb15HLuP0PYUASyMrhHp\ntnzh+8tNzK9Jva4Ho5QZZFxOAQLdPzYg9EIdEuutLDOE2ph4HUIXx4tj6BCBOAxz\ny+JR/W0dfzWJ4HMAtMV4x4CZP1RKVhKRjv/JO+bUBdEQhL3WW9iS9D72HYUdqquk\nuwOl+ofPQl0PSZpomWrWYpYDj/eWXrTG/zwXaNWQR0Vun7llZeTBz6fRmrRkeWzp\nJgmiHqD1CiB76rfjkbF7Rvs1pr/X6r/ibThVT/UY1C6Cb6wSJkKIjG1x8bVkEOUI\nNOgfGwUjAgMBAAECggEAA23Ngceb1sMGs4p2IGMNXnfMAqgSdq4gcs37mV+JvDNH\nkJZ486cvOlq/1+7N4qwO4bSCQSzs5NrqCyIP/ICIA28TXoxGJBlZFpAgZiByfvFT\nzpJOZK52Tg1LZKfrIXxdXRRY35137SpNfOo1YrM5opI/QChZV4t8WcI4U17OnEUT\nUUWz0w69n6VWLqOzDgZI/UvZrkTQfm7hQxkRSYxh+7W0xFrXR0PZzBq8pBOMV9Yj\nFLytu3QTh9hRjgwxYGJkiiIrlP0HdmsYbLp2LbBGuz6weU5thn6xe7QMS7et3gj5\nCHQzZ1DKjkW3kJXufHT0TWxw3Br+/QlYuHIaB4QCYQKBgQDtBdkPIVSqU4j6KVbe\nPsKsGEqaMtUr2nA5Q08PUZlAWrfBe2riHOMyqmr4TyXlpOU6poYVL4ayepJUrJwP\nskGu0zG3kjodiBYnaxmbZ7aPg6KDvJMHK2G0/5sh0wmA71p09ulvi340Y13o6MXa\nMrAKZGOGo2g2qNspKh96wdZv0QKBgQDF4cQ6eZb+gKiFF4htNGNSjXUNZY8nBtTv\nnSlFWDqaM+2OC3nHUwNWiZd/hshGb5O5BcjmIV2+6xFXOtfWSmRHWrLqarVxJwma\nc+oymOHqiVefh/vv+eMLc3GYRNHV8DQYn5weIzl24VPwAq6swa+eokzViCM6f352\nr+ziQTj2swKBgQDZrIQyQ/74Sa1DaRGxG1w3JjvlLwfctUhZHnqN6/ddRbL6SrjX\nHYZ98ko47p80LmKioWoELNh8MtsOTlMoiyGNR8Gh//XFR0RpQQ+MTAw58r8eUuGI\nNQwPaKr0vlY9BhRB1Lx/R1FJFXSaQKPrhp9re9R3QryjbiGPxXKRj1C68QKBgA3H\nzzaTSSSoKRQ7s1CHmXMiTsiEDhgVrbaSJ1Gg91PN0flWa0CqU00vf9FtvXzKQGte\nL8N3B2RIUojUnDtcKuedNWCF1eTvZwfOkry7UOBYeDWv7qejq2AcxghoooRXmgks\n9F5U7aeNwZ6xUSDOzEAr5VXpiSqFvnTdg42uJR1pAoGBAKbLWW3tRDZyMAhmdOi3\nznf/AZbsH27n+NkPFNlkBBe5lno7VaWpbHx40wexU9Zr+XWoYRiNPd4jikQJcrD9\n8r4I+ykpZ1WSI4iCPXSL3EBPMaj3rAPGDNff+1Uz7WatKpHKYzEspAl7rcupyNLh\nSfTIZ9wPCp86rlezimUmlScZ\n-----END PRIVATE KEY-----\n",
+  "client_email": "vision@semiotic-lamp-431814-j7.iam.gserviceaccount.com",
+  "client_id": "106329194435790427193",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision%40semiotic-lamp-431814-j7.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

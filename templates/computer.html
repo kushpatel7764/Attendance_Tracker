@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='computer.css') }}">
+    <script>
+        //CHATGPT helped to create this function
+        function validateForm(event) {
+            const rows = document.querySelectorAll("#attendanceTable tbody tr");
+            for (const row of rows) {
+                const radios = row.querySelectorAll("input[type='radio']");
+                const isChecked = Array.from(radios).some(radio => radio.checked);
+                if (!isChecked) {
+                    alert("Please select a status for each student.");
+                    event.preventDefault(); // Prevent form submission
+                    return false;
+                }
+            }
+            return true; // Allow form submission if validation passes
+        }
+    </script>
+</head>
+<body>
+    <h1>Attendance Table</h1>
+    {% if data %}
+    <p>Class Number: {{ class_number }}</p>
+    <form id="attendanceForm" method="POST" action="/submit" onsubmit="return validateForm(event)">
+        <!-- Add a hidden input to pass class_number -->
+        <input type="hidden" name="class_number" value="{{ class_number }}">
+
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Late</th>
+                    <th>Excused</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in data.splitlines() %}
+                <tr>
+                    <td>
+                        <input type="text" name="studentName_{{ loop.index0 }}" value="{{ student }}" readonly>
+                    </td>
+                    <td><input type="radio" name="status_{{ loop.index0 }}" value="Present"></td>
+                    <td><input type="radio" name="status_{{ loop.index0 }}" value="Absent"></td>
+                    <td><input type="radio" name="status_{{ loop.index0 }}" value="Late"></td>
+                    <td><input type="radio" name="status_{{ loop.index0 }}" value="Excused"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <!-- Display attendance results -->
+    {% if attendance_data %}
+    <h2>Attendance Data for {{ date }}</h2>
+    <table class="attendance-data">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in attendance_data %}
+            <tr>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="location.href='index.html'">Home</button>
+    {% endif %}
+</body>
+</html>

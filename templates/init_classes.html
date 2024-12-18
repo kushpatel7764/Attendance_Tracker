@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initialize Classes</title>
+    <script>
+        function addClass() {
+            const classesContainer = document.getElementById("classes");
+            const newClassContainer = document.createElement("div");
+            newClassContainer.className = "class-container";
+            
+            const newClassHeader = document.createElement("h2");
+            newClassHeader.textContent = "Class " + (classesContainer.children.length + 1);
+
+            const newTextarea = document.createElement("textarea");
+            newTextarea.name = "class_description";
+            newTextarea.placeholder = "Enter student names";
+
+            newClassContainer.appendChild(newClassHeader);
+            newClassContainer.appendChild(newTextarea);
+
+            classesContainer.appendChild(newClassContainer);
+        }
+        function validateForm() { 
+            const username = document.forms["classForm"]["class_input"].value; 
+            if (username === "") { 
+                alert("Unique Username must be filled out"); 
+                return false; 
+            } 
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Initialize Classes</h1>
+    <form name="classForm" action="/submit_classes" method="post" onsubmit="return validateForm()">
+        <div id="classes">
+            <div class="class-container">
+                <h2>Class 1</h2>
+                <p>Each student's name should be in a new line.</p>
+                <textarea name="class_description" placeholder="Enter student names"></textarea>
+            </div>
+        </div>
+        
+        <button type="button" onclick="addClass()">Add Class</button>
+        <p>In the input field below give this class information a unquie name so it can identifed later<p>
+        <input type="text" name="class_input" placeholder="Unique Username">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

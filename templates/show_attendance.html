@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, select {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Table</h1>
+    <form method="get" action="/show_attendance.html">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="First Name">
+        
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Last Name">
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" placeholder="Class">
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+        <option value="">Select Status</option>
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+        <option value="Late">Late</option>
+        <option value="Excused">Excused</option>
+        </select>
+        <label for="show_class">Show Class Column:</label>
+        <input type="checkbox" id="show_class" name="show_class" value="1" {% if request.args.get('show_class') %}checked{% endif %}>
+        
+        <label for="show_date">Show Date Column:</label>
+        <input type="checkbox" id="show_date" name="show_date" value="1" {% if request.args.get('show_date') %}checked{% endif %}>
+        
+
+        <button type="submit">Filter</button>
+        <a href="/show_attendance.html"><button type="button">Clear Filters</button></a>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Status</th>
+                {% if show_class %}
+                    <th>Class</th>
+                {% endif %}
+                {% if show_date %}
+                    <th>Date</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.ID }}</td>
+                <td>{{ row.FirstName }}</td>
+                <td>{{ row.LastName }}</td>
+                <td>{{ row.Status }}</td>
+                {% if show_class %}
+                    <td>{{ row.Class }}</td>
+                {% endif %}
+                {% if show_date %}
+                    <td>{{ row.date }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
